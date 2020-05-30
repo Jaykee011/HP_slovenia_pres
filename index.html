@@ -27,7 +27,7 @@
 			<div class="slides">
 				<section>
 					<section class='skip'></section>
-					<section>
+					<section class="top">
 						BEGIN
 					</section>
 				</section>
@@ -36,44 +36,44 @@
 					<section class='skip'></section>
 					<section class='skip'></section>
 
-					<section id='p111'>
+					<section id='p111' class='p1'>
 						<a href="#/top1">top</a>
 						proj111
 					</section>
 
-					<section id='p121'>
+					<section id='p121' class='p1'>
 						<a href="#/top1">top</a>
 						proj121
 					</section>
 
-					<section id='p131'>
+					<section id='p131' class='p1'>
 						<a href="#/top1">top</a>
 						proj131
 					</section>
 				</section>
 
 				<section>
-					<section>
+					<section class="top">
 						top12
 					</section>
-					<section id='top1'>
+					<section id='top1' class="top">
 						<h1>top1</h1>
 						<a href="#/p111">project 1</a>
 						<a href="#/p211">project 2</a>
 						<a href="#/p311">project 3</a>
 					</section>
 
-					<section id='p211'>
+					<section id='p211' class='p2'>
 						<a href="#/top1">top</a>
 						proj211
 					</section>
 
-					<section id='p221'>
+					<section id='p221' class='p2'>
 						<a href="#/top1">top</a>
 						proj221
 					</section>
 
-					<section id='p231'>
+					<section id='p231' class='p2'>
 						<a href="#/top1">top</a>
 						proj231
 					</section>
@@ -83,17 +83,17 @@
 					<section class='skip'></section>
 					<section class='skip'></section>
 
-					<section id='p311'>
+					<section id='p311' class='p3'>
 						<a href="#/top1">top</a>
 						proj311
 					</section>
 
-					<section id='p321'>
+					<section id='p321' class='p3'>
 						<a href="#/top1">top</a>
 						proj321
 					</section>
 
-					<section id='p331'>
+					<section id='p331' class='p3'>
 						<a href="#/top1">top</a>
 						proj331
 					</section>
@@ -103,27 +103,27 @@
 					<section class='skip'></section>
 					<section class='skip'></section>
 
-					<section id='p112'>
+					<section id='p112' class='p1'>
 						<a href="#/top2">top</a>
 						proj112
 					</section>
 
-					<section id='p122'>
+					<section id='p122' class='p1'>
 						<a href="#/top2">top</a>
 						proj122
 					</section>
 
-					<section id='p132'>
+					<section id='p132' class='p1'>
 						<a href="#/top2">top</a>
 						proj132
 					</section>
 				</section>
 
 				<section>
-					<section>
+					<section class="top">
 						top22
 					</section>
-					<section id='top2'>
+					<section id='top2' class="top">
 						<h1>top2</h1>
 						<img src="media/maptest.png" alt="javascript image map" usemap="#maptest" class='linkmap' id="lm1"/>
 						<!-- <a href="#/p112">project 1</a>
@@ -131,17 +131,17 @@
 						<a href="#/p312">project 3</a> -->
 					</section>
 
-					<section id='p212'>
+					<section id='p212' class='p2'>
 						<a href="#/top2">top</a>
 						proj212
 					</section>
 
-					<section id='p222'>
+					<section id='p222' class='p2'>
 						<a href="#/top2">top</a>
 						proj222
 					</section>
 
-					<section id='p232'>
+					<section id='p232' class='p2'>
 						<a href="#/top2">top</a>
 						proj232
 					</section>
@@ -151,17 +151,17 @@
 					<section class='skip'></section>
 					<section class='skip'></section>
 
-					<section id='p312'>
+					<section id='p312' class='p3'>
 						<a href="#/top2">top</a>
 						proj312
 					</section>
 
-					<section id='p322'>
+					<section id='p322' class='p3'>
 						<a href="#/top2">top</a>
 						proj322
 					</section>
 
-					<section id='p332'>
+					<section id='p332' class='p3'>
 						<a href="#/top2">top</a>
 						proj332
 					</section>
@@ -184,11 +184,13 @@
 			function swap1(){document.getElementById("lm1").setAttribute('src', 'media/maptest1.png');}
 			function swap2(){document.getElementById("lm1").setAttribute('src', 'media/maptest2.png');}
 			function swap3(){document.getElementById("lm1").setAttribute('src', 'media/maptest3.png');}
-
 			// More info about config & dependencies:
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				progress: false,
+				controls: false,
+				transition: 'convex',
 				navigationMode: 'grid',
 				controlsLayout: 'edges',
 				controlsBackArrows: 'visible',
@@ -207,36 +209,64 @@
 			} );
 
 			Reveal.addKeyBinding( { keyCode: 38, key: 'ArrowUp', description: 'Start timer' }, function() {
+				var saveState = Reveal.getState();
+				var project = Reveal.getCurrentSlide().classList[0]
 				Reveal.up();
-				while(Reveal.getCurrentSlide().classList.contains('skip'))
+				var i = 0;
+				while(project != Reveal.getCurrentSlide().classList[0])
 				{
+					if (i >= 20){
+						Reveal.setState(saveState)
+						break;
+					}
+					i++;
 					Reveal.up();
 				}
 			} );
 			Reveal.addKeyBinding( { keyCode: 40, key: 'ArrowDown', description: 'Start timer' }, function() {
+				var saveState = Reveal.getState();
+				var project = Reveal.getCurrentSlide().classList[0]
 				Reveal.down();
-				while(Reveal.getCurrentSlide().classList.contains('skip'))
+				var i = 0;
+				while(project != Reveal.getCurrentSlide().classList[0])
 				{
+					if (i >= 20){
+						Reveal.setState(saveState)
+						break;
+					}
+					i++;
 					Reveal.down();
 				}
 			} );
 			Reveal.addKeyBinding( { keyCode: 37, key: 'ArrowLeft', description: 'Start timer' }, function() {
+				var saveState = Reveal.getState();
+				var project = Reveal.getCurrentSlide().classList[0]
 				Reveal.left();
-				while(Reveal.getCurrentSlide().classList.contains('skip'))
+				var i = 0;
+				while(project != Reveal.getCurrentSlide().classList[0])
 				{
+					if (i >= 20){
+						Reveal.setState(saveState)
+						break;
+					}
+					i++;
 					Reveal.left();
 				}
 			} );
 			Reveal.addKeyBinding( { keyCode: 39, key: 'ArrowRight', description: 'Start timer' }, function() {
+				var saveState = Reveal.getState();
+				var project = Reveal.getCurrentSlide().classList[0]
 				Reveal.right();
-				while(Reveal.getCurrentSlide().classList.contains('skip'))
+				var i = 0;
+				while(project != Reveal.getCurrentSlide().classList[0])
 				{
+					if (i >= 20){
+						Reveal.setState(saveState)
+						break;
+					}
+					i++;
 					Reveal.right();
 				}
-			} );
-			Reveal.addKeyBinding( { keyCode: 68, key: 'd', description: 'Start timer' }, function() {
-				Reveal.right();
-				Reveal.left();
 			} );
 		</script>
 	</body>
