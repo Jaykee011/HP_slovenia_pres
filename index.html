@@ -27,7 +27,7 @@
 			<div class="slides">
 				<section>
 					<section class='skip'></section>
-					<section class="top">
+					<section>
 						BEGIN
 					</section>
 				</section>
@@ -36,44 +36,44 @@
 					<section class='skip'></section>
 					<section class='skip'></section>
 
-					<section id='p111' class='p1'>
+					<section id='p111'>
 						<a href="#/top1">top</a>
 						proj111
 					</section>
 
-					<section id='p121' class='p1'>
+					<section id='p121'>
 						<a href="#/top1">top</a>
 						proj121
 					</section>
 
-					<section id='p131' class='p1'>
+					<section id='p131'>
 						<a href="#/top1">top</a>
 						proj131
 					</section>
 				</section>
 
 				<section>
-					<section class="top">
+					<section>
 						top12
 					</section>
-					<section id='top1' class="top">
+					<section id='top1'>
 						<h1>top1</h1>
 						<a href="#/p111">project 1</a>
 						<a href="#/p211">project 2</a>
 						<a href="#/p311">project 3</a>
 					</section>
 
-					<section id='p211' class='p2'>
+					<section id='p211'>
 						<a href="#/top1">top</a>
 						proj211
 					</section>
 
-					<section id='p221' class='p2'>
+					<section id='p221'>
 						<a href="#/top1">top</a>
 						proj221
 					</section>
 
-					<section id='p231' class='p2'>
+					<section id='p231'>
 						<a href="#/top1">top</a>
 						proj231
 					</section>
@@ -83,17 +83,17 @@
 					<section class='skip'></section>
 					<section class='skip'></section>
 
-					<section id='p311' class='p3'>
+					<section id='p311'>
 						<a href="#/top1">top</a>
 						proj311
 					</section>
 
-					<section id='p321' class='p3'>
+					<section id='p321'>
 						<a href="#/top1">top</a>
 						proj321
 					</section>
 
-					<section id='p331' class='p3'>
+					<section id='p331'>
 						<a href="#/top1">top</a>
 						proj331
 					</section>
@@ -103,44 +103,45 @@
 					<section class='skip'></section>
 					<section class='skip'></section>
 
-					<section id='p112' class='p1'>
+					<section id='p112'>
 						<a href="#/top2">top</a>
 						proj112
 					</section>
 
-					<section id='p122' class='p1'>
+					<section id='p122'>
 						<a href="#/top2">top</a>
 						proj122
 					</section>
 
-					<section id='p132' class='p1'>
+					<section id='p132'>
 						<a href="#/top2">top</a>
 						proj132
 					</section>
 				</section>
 
 				<section>
-					<section class="top">
+					<section>
 						top22
 					</section>
-					<section id='top2' class="top">
+					<section id='top2'>
 						<h1>top2</h1>
-						<a href="#/p112">project 1</a>
+						<img src="media/maptest.png" alt="javascript image map" usemap="#maptest" class='linkmap' id="lm1"/>
+						<!-- <a href="#/p112">project 1</a>
 						<a href="#/p212">project 2</a>
-						<a href="#/p312">project 3</a>
+						<a href="#/p312">project 3</a> -->
 					</section>
 
-					<section id='p212' class='p2'>
+					<section id='p212'>
 						<a href="#/top2">top</a>
 						proj212
 					</section>
 
-					<section id='p222' class='p2'>
+					<section id='p222'>
 						<a href="#/top2">top</a>
 						proj222
 					</section>
 
-					<section id='p232' class='p2'>
+					<section id='p232'>
 						<a href="#/top2">top</a>
 						proj232
 					</section>
@@ -150,17 +151,17 @@
 					<section class='skip'></section>
 					<section class='skip'></section>
 
-					<section id='p312' class='p3'>
+					<section id='p312'>
 						<a href="#/top2">top</a>
 						proj312
 					</section>
 
-					<section id='p322' class='p3'>
+					<section id='p322'>
 						<a href="#/top2">top</a>
 						proj322
 					</section>
 
-					<section id='p332' class='p3'>
+					<section id='p332'>
 						<a href="#/top2">top</a>
 						proj332
 					</section>
@@ -168,16 +169,26 @@
 			</div>
 		</div>
 
+		<map name="maptest">
+			<!-- <area shape="circle" coords="80,1,118,30,102,75,56,75,41,32" href="#/p112" alt="p1"
+				  onMouseOver="show_image_map_value('Go to Perl Tutorial')" onMouseOut="show_image_map_value('')"/> -->	  
+			<area shape="circle" coords="117,100,20" href="#/p112" alt="p1" onmouseover="swap1()" onmouseout="rev()"/>
+			<area shape="circle" coords="380,100,30" href="#/p212" alt="p2" onmouseover="swap2()" onmouseout="rev()"/>
+			<area shape="circle" coords="549,100,30" href="#/p312" alt="p3" onmouseover="swap3()" onmouseout="rev()"/>
+		 </map>
+
 		<script src="js/reveal.js"></script>
 
 		<script>
+			function rev(){document.getElementById("lm1").setAttribute('src', 'media/maptest.png');}
+			function swap1(){document.getElementById("lm1").setAttribute('src', 'media/maptest1.png');}
+			function swap2(){document.getElementById("lm1").setAttribute('src', 'media/maptest2.png');}
+			function swap3(){document.getElementById("lm1").setAttribute('src', 'media/maptest3.png');}
+
 			// More info about config & dependencies:
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
-				progress: false,
-				controls: false,
-				transition: 'convex',
 				navigationMode: 'grid',
 				controlsLayout: 'edges',
 				controlsBackArrows: 'visible',
@@ -196,64 +207,36 @@
 			} );
 
 			Reveal.addKeyBinding( { keyCode: 38, key: 'ArrowUp', description: 'Start timer' }, function() {
-				var saveState = Reveal.getState();
-				var project = Reveal.getCurrentSlide().classList[0]
 				Reveal.up();
-				var i = 0;
-				while(project != Reveal.getCurrentSlide().classList[0])
+				while(Reveal.getCurrentSlide().classList.contains('skip'))
 				{
-					if (i >= 20){
-						Reveal.setState(saveState)
-						break;
-					}
-					i++;
 					Reveal.up();
 				}
 			} );
 			Reveal.addKeyBinding( { keyCode: 40, key: 'ArrowDown', description: 'Start timer' }, function() {
-				var saveState = Reveal.getState();
-				var project = Reveal.getCurrentSlide().classList[0]
 				Reveal.down();
-				var i = 0;
-				while(project != Reveal.getCurrentSlide().classList[0])
+				while(Reveal.getCurrentSlide().classList.contains('skip'))
 				{
-					if (i >= 20){
-						Reveal.setState(saveState)
-						break;
-					}
-					i++;
 					Reveal.down();
 				}
 			} );
 			Reveal.addKeyBinding( { keyCode: 37, key: 'ArrowLeft', description: 'Start timer' }, function() {
-				var saveState = Reveal.getState();
-				var project = Reveal.getCurrentSlide().classList[0]
 				Reveal.left();
-				var i = 0;
-				while(project != Reveal.getCurrentSlide().classList[0])
+				while(Reveal.getCurrentSlide().classList.contains('skip'))
 				{
-					if (i >= 20){
-						Reveal.setState(saveState)
-						break;
-					}
-					i++;
 					Reveal.left();
 				}
 			} );
 			Reveal.addKeyBinding( { keyCode: 39, key: 'ArrowRight', description: 'Start timer' }, function() {
-				var saveState = Reveal.getState();
-				var project = Reveal.getCurrentSlide().classList[0]
 				Reveal.right();
-				var i = 0;
-				while(project != Reveal.getCurrentSlide().classList[0])
+				while(Reveal.getCurrentSlide().classList.contains('skip'))
 				{
-					if (i >= 20){
-						Reveal.setState(saveState)
-						break;
-					}
-					i++;
 					Reveal.right();
 				}
+			} );
+			Reveal.addKeyBinding( { keyCode: 68, key: 'd', description: 'Start timer' }, function() {
+				Reveal.right();
+				Reveal.left();
 			} );
 		</script>
 	</body>
