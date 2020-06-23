@@ -1604,3 +1604,14 @@ body {
 
 .zoomed .reveal .roll span:after {
   visibility: hidden; }
+
+
+
+/*********************************************
+ * HACKS
+ *********************************************/
+.scrollable {
+    overflow-y: auto  !important;
+    overflow-x: hidden !important;
+    height: 700px;
+}
