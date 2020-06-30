@@ -1615,3 +1615,32 @@ body {
     overflow-x: hidden !important;
     height: 700px;
 }
+
+.container {
+  display: flex;
+}
+
+.nav {
+  flex: 1;
+  margin-left: auto;
+  margin-bottom: auto;
+  padding: 0 0 0 0;
+  /* background-color: red; */
+}
+
+.content {
+  flex: 5;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.reveal section img { background:none; border:none; box-shadow:none; }
+
+.fa {
+  color: black;
+}

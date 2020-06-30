@@ -251,7 +251,7 @@ body {
  * NAVIGATION CONTROLS
  *********************************************/
 .reveal .controls {
-  color: #2a76dd; }
+  color: #000000; }
 
 /*********************************************
  * PROGRESS BAR
@@ -271,3 +271,11 @@ body {
 @media print {
   .backgrounds {
     background-color: #fff; } }
+    
+    
+/*********************************************
+ * HACKS
+ *********************************************/
+.reveal section img { background:none; border:none; box-shadow:none; }
+
+

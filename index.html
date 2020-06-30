@@ -8,10 +8,13 @@
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/white.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -29,7 +32,7 @@
 					<section class='skip'></section>
 					<section class='skip'></section>
 					<section class='skip'></section>
-					<section class="top" data-background-image="test_bg.png">
+					<section class="top nl nr nd nu" data-background-image="media/p_nav.png" data-background-size='100% 100%'>
 					</section>
 				</section>
 
@@ -63,7 +66,16 @@
 						top12
 					</section>
 					<section id='top1' class="top">
-						<img src='test.png' style="border-color:white">						
+						<!-- <div style="width:1920px; max-width:1920px; height:1080px; max-height:1080px; background-color: white"> -->
+						<!-- </div> -->
+						<div class='container'>
+							<div class='nav'>
+								<img class='' src='media/controls_mu.png' style="border: 0;">							
+							</div>
+							<div class='content'>
+								<img class='' src='media/test.png' style="border:none">	
+							</div>
+						</div>
 						<!-- <h1>top1</h1>
 						<a href="#/p111">Rakovnik Lake</a>
 						<a href="#/p211">Bank</a> -->
@@ -121,9 +133,9 @@
 					</section>
 					<section id='top2' class="top">
 						<h1>top2</h1>
-						<!-- <img src="media/maptest.png" alt="javascript image map" usemap="#maptest" class='linkmap' id="lm1"/> -->
-						<a href="#/p312">project 3</a>
-						<a href="#/p412">project 4</a>
+						<img src="media/maptest.png" alt="javascript image map" usemap="#maptest" class='linkmap' id="lm1"/>
+						<!-- <a href="#/p312">project 3</a>
+						<a href="#/p412">project 4</a> -->
 					</section>
 
 					<section id='p412' class='p4'>
@@ -649,18 +661,45 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				width: '100%',
+				height: '100%',
+				margin: 0,
+				disableLayout: false,
 				progress: false,
-				controls: false,
 				transition: 'convex',
 				navigationMode: 'grid',
 				controlsLayout: 'edges',
 				controlsBackArrows: 'visible',
 				mouseWheel: true,
 				hash: true,
+				controls: false,
+				customcontrols: { 
+					slideNumberCSS : 'display:none',
+					controls: [ 
+						{ icon: '<i class="fa fa-angle-left" id="larrow"></i>', 
+						css: 'position: fixed; right: 81.5%; bottom: 50%; z-index: 30; font-size: 48px;', 
+						action: 'Reveal.prev(); return false;',
+						id: 'test'
+						}, 
+						{ icon: '<i class="fa fa-angle-right" id="rarrow"></i>', 
+						css: 'position: fixed; right: 1%; bottom: 50%; z-index: 30; font-size: 48px;', 
+						action: 'Reveal.next(); return false;' 
+						},
+						{ icon: '<i class="fa fa-angle-down" id="darrow"></i>', 
+						css: 'position: fixed; right: 42%; bottom: 1%; z-index: 30; font-size: 48px;', 
+						action: 'Reveal.next(); return false;' 
+						},
+						{ icon: '<i class="fa fa-angle-up" id="uarrow"></i>', 
+						css: 'position: fixed; right: 42%; bottom: 95%; z-index: 30; font-size: 48px;', 
+						action: 'Reveal.next(); return false;' 
+						}
+					] 
+				},
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/highlight/highlight.js' },
+					{ src: 'plugin/customcontrols/customcontrols.js' },
 					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
@@ -719,6 +758,11 @@
 				var project = Reveal.getCurrentSlide().classList[0]
 				Reveal.right();
 				var i = 0;
+
+				if ("nr" in Reveal.getCurrentSlide().classList){
+					Reveal.getState
+				}
+
 				while(project != Reveal.getCurrentSlide().classList[0])
 				{
 					if (i >= 20){
@@ -727,6 +771,38 @@
 					}
 					i++;
 					Reveal.right();
+				}
+			} );
+
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+				console.log(event.currentSlide.classList);
+				if (event.currentSlide.classList.contains('nl')){
+					document.getElementById('larrow').style.display = 'none';
+				}
+				else{
+					document.getElementById('larrow').style.display = 'inline-block';
+
+				}
+				if (event.currentSlide.classList.contains('nr')){
+					document.getElementById('rarrow').style.display = 'none';
+				}
+				else{
+					document.getElementById('rarrow').style.display = 'inline-block';
+
+				}
+				if (event.currentSlide.classList.contains('nu')){
+					document.getElementById('uarrow').style.display = 'none';
+				}
+				else{
+					document.getElementById('uarrow').style.display = 'inline-block';
+
+				}
+				if (event.currentSlide.classList.contains('nd')){
+					document.getElementById('darrow').style.display = 'none';
+				}
+				else{
+					document.getElementById('darrow').style.display = 'inline-block';
+
 				}
 			} );
 		</script>
