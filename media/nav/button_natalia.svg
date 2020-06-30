@@ -1,0 +1,89 @@
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="320px"
+   height="420px"
+   version="1.1"
+   id="svg21"
+   sodipodi:docname="button_natalia.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata27">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs25" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     id="namedview23"
+     showgrid="false"
+     inkscape:zoom="2.8809524"
+     inkscape:cx="160"
+     inkscape:cy="210"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg21" />
+    <ellipse
+       id="path3735"
+       cx="121.14049"
+       cy="350.23141"
+       rx="43.735538"
+       ry="44.082645"
+       style="stroke-width:0.96076894" class='wrapmeL'/>
+    <ellipse
+       id="path3735-3"
+       cx="228.04959"
+       cy="349.19009"
+       rx="43.735538"
+       ry="44.082645"
+       style="stroke-width:0.96076894"  class='wrapmeR'/>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:0.40000001;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="83.999985"
+     y="39.223141"
+     id="text3760"><tspan
+   sodipodi:role="line"
+   id="tspan3758"
+   x="83.999985"
+   y="39.223141">    <tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666603px;line-height:0.40000001;font-family:serif;-inkscape-font-specification:serif"
+   id="tspan3764">South</tspan></tspan><tspan
+   sodipodi:role="line"
+   x="83.999985"
+   y="56.498142"
+   id="tspan3762"
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66666603px;line-height:0.40000001;font-family:serif;-inkscape-font-specification:serif">Undergroud Alley</tspan>
+	</text>
+  <ellipse
+     id="path3766"
+     cx="175.28926"
+     cy="185.35538"
+     rx="107.2562"
+     ry="107.60331"
+     style="stroke-width:0.99973917" />
+</svg>

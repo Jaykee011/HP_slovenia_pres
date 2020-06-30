@@ -1612,8 +1612,8 @@ body {
  *********************************************/
 .scrollable {
     overflow-y: auto  !important;
-    overflow-x: hidden !important;
-    height: 700px;
+    overflow-x: auto !important;
+    height: 900px;
 }
 
 .container {
@@ -1625,11 +1625,21 @@ body {
   margin-left: auto;
   margin-bottom: auto;
   padding: 0 0 0 0;
+  width: auto;
+  height: auto
+  /* max-width: auto;
+  max-height: auto;
+  min-width: 320px;
+  min-height: 420px; */
   /* background-color: red; */
 }
 
 .content {
   flex: 5;
+  /* max-width: auto;
+  max-height: auto;
+  min-width: 1500px;
+  min-height: 850px; */
 }
 
 /* Clear floats after image containers */
