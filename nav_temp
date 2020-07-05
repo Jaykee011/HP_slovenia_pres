@@ -1,0 +1,30 @@
+
+			//dictionary of arrow targets - "slide":[Left,Right,Top,Down]
+			var nav_targets = {
+                // ALEN
+				'alen_1540_1':[null, 'alen_1711_1', 'alen_1540_5','alen_1540_2'],
+				'alen_1540_2':[null, 'alen_1692_1', 'alen_1540_1','alen_1540_3'],
+				'alen_1540_3':[null, 'alen_1692_2', 'alen_1540_2','alen_1540_4'],
+				'alen_1540_4':[null, 'alen_1692_3', 'alen_1540_3','alen_1540_5'],
+				'alen_1540_5':[null, 'alen_1692_4', 'alen_1540_4','alen_1540_1'],
+            
+                'alen_1692_1':['alen_1540_2','alen_1711_2','alen_1692_4','alen_1692_2'],
+                'alen_1692_2':['alen_1540_3','alen_1711_3','alen_1692_1','alen_1692_3'],
+                'alen_1692_3':['alen_1540_4','alen_1711_4','alen_1692_2','alen_1692_4'],
+                'alen_1692_4':['alen_1540_5','alen_1900_5','alen_1692_3','alen_1692_1'],
+
+                'alen_1711_1':['alen_1540_1','alen_1900_1','alen_1711_4','alen_1711_2'],
+                'alen_1711_2':['alen_1692_1','alen_1755_1','alen_1711_1','alen_1711_3'],
+                'alen_1711_3':['alen_1692_2','alen_1900_3','alen_1711_2','alen_1711_4'],
+                'alen_1711_4':['alen_1692_3','alen_1900_4','alen_1711_3','alen_1711_1'],
+
+                'alen_1755_1':['alen_1711_2','alen_1830_1',null,null],
+
+                'alen_1830_1':['alen_1755_1','alen_1900_2',null,null],
+
+                'alen_1900_1':['alen_1711_1',null,'alen_1900_5','alen_1900_2'],
+                'alen_1900_2':['alen_1830_1',null,'alen_1900_1','alen_1900_3'],
+                'alen_1900_3':['alen_1711_3',null,'alen_1900_2','alen_1900_4'],
+                'alen_1900_4':['alen_1711_4',null,'alen_1900_3','alen_1900_5'],
+                'alen_1900_5':['alen_1692_4',null,'alen_1900_4','alen_1900_1'],
+            }
