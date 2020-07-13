@@ -47,3 +47,19 @@ var RevealCustomControls = window.RevealCustomControls || (function(){
 	return this;
 
 })();
+
+function refresh(config) {
+	// get children div.customcontrols, remove them and add new ones
+	var elements = document.getElementsByClassName('customcontrols');
+    while(elements.length > 0){
+        elements[0].parentNode.removeChild(elements[0]);
+	}
+	
+	for (var i = 0; i < config.controls.length; i++ ) {
+		var control = document.createElement( 'div' );
+		control.className = "customcontrols";
+		control.style.cssText = config.controls[i].css;
+		control.innerHTML = '<a href="#" onclick="' + config.controls[i].action + '">' + config.controls[i].icon + '</a>';
+		document.querySelector(".reveal").appendChild( control );
+	}
+}
