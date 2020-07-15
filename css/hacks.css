@@ -100,6 +100,26 @@
   color: black;
 }
 
+g text{
+  transition: all .4s ease;
+  opacity:0;
+  /* visibility: hidden; */
+}
+
+g circle{
+  transition: all .4s ease;
+  fill: rgb(43, 41, 41, .7);
+}
+
+g:hover text{
+  opacity:1;
+  /* visibility: visible; */
+}
+
+g:hover circle{
+  fill: rgb(43, 41, 41, 1);
+}
+
 /* .reveal .slides > section.present, .reveal .slides > section > section.present {
   min-height: 100% !important;
   display: flex !important;
