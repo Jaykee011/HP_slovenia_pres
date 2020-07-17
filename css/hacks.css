@@ -50,6 +50,7 @@
 
 .nav-zuz {
   position: fixed;
+  z-index: 10;
   top: 40px;
   left: 22px;
 }
@@ -137,6 +138,8 @@ g circle{
   transition: all .4s ease;
   /* fill: rgb(43, 41, 41, .7); */
   fill: rgba(255, 255, 255, 0.85);
+  stroke: black;
+  stroke-width: 1px;
 }
 
 g:hover text{
