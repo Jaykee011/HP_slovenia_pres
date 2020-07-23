@@ -1,16 +1,7 @@
 //dictionary of arrow targets - "slide":[Left,Right,Top,Down]
 var nav_targets = {
     //TEST
-    'test1'                 :[null, null,   'test10',   'test2'],
-    'test2'                 :[null, null,   'test1',    'test3'],
-    'test3'                 :[null, null,   'test2',    'test4'],
-    'test4'                 :[null, null,   'test3',    'test5'],
-    'test5'                 :[null, null,   'test4',    'test6'],
-    'test6'                 :[null, null,   'test5',    'test7'],
-    'test7'                 :[null, null,   'test6',    'test8'],
-    'test8'                 :[null, null,   'test7',    'test9'],
-    'test9'                 :[null, null,   'test8',    'test10'],
-    'test10'                :[null, null,   'test9',    'test1'],
+    'test'                 :['ov', 'ov',   'ov',   'ov'],
 
     'begin'                 :[null, 'ov',    null,   'about'],
     'about'                 :[null, 'ov',   'begin',    'test1'],
@@ -171,4 +162,139 @@ function down(){
     if (nav_targets[id] && nav_targets[id][3]){
         window.location.href='#/'+nav_targets[id][3];
     }
+}
+
+function render_navigation(){
+    var slide = Reveal.getCurrentSlide();
+    if (slide.classList.contains('processed') || slide.classList.contains('no_controls')) return;
+
+    var control_svg = slide.querySelector('.control_svg');
+    if (!control_svg){
+        var d = document.createElement('div');
+        var s = document.createElementNS("http://www.w3.org/2000/svg",'svg');
+
+        d.classList.add('nav-con');
+        s.classList.add('control_svg');
+
+        s.setAttributeNS(null, 'height', '100%');
+        s.setAttributeNS(null, 'width', '100%');
+        s.setAttributeNS(null, 'viewbox', '0 0 1900 1000');
+        s.setAttributeNS(null, 'preserveAspectRatio', 'none');
+        
+        d.appendChild(s);
+        slide.appendChild(d);
+    }
+    else{
+        s = control_svg;
+    }
+
+    var page_id = slide.id;
+    var nav_style = null;
+    var accessible = [];
+
+    if (page_id in nav_targets){
+        accessible = nav_targets[page_id];
+    }
+    
+    var l = document.createElementNS("http://www.w3.org/2000/svg",'text');
+    var r = document.createElementNS("http://www.w3.org/2000/svg",'text');
+    var d = document.createElementNS("http://www.w3.org/2000/svg",'text');
+    var u = document.createElementNS("http://www.w3.org/2000/svg",'text');
+    
+    l.classList.add('fa');
+    r.classList.add('fa');
+    d.classList.add('fa');
+    u.classList.add('fa');
+    l.classList.add('pointer');
+    r.classList.add('pointer');
+    d.classList.add('pointer');
+    u.classList.add('pointer');
+    
+    // unicode characters for fontawesome
+    // left = &#xf104
+    // right = &#xf105
+    // up = &#xf106
+    // down = &#xf107
+    
+    l.textContent = '\uf104';
+    r.textContent = '\uf105';
+    u.textContent = '\uf106';
+    d.textContent = '\uf107';
+
+
+    if (slide.classList.contains('po_button')){
+        var a = document.createElementNS("http://www.w3.org/2000/svg",'a');
+        var c = document.createElementNS("http://www.w3.org/2000/svg",'circle');
+        var t1 = document.createElementNS("http://www.w3.org/2000/svg",'text');
+        var t2 = document.createElementNS("http://www.w3.org/2000/svg",'text');
+
+        t1.textContent = 'Projects';
+        t2.textContent = 'Overview';
+
+        a.setAttribute('href', '#/ov');
+
+        c.setAttributeNS(null, 'cx', '85');
+        c.setAttributeNS(null, 'cy', '160');
+        c.setAttributeNS(null, 'r', '45');
+        c.setAttributeNS(null, 'stroke', 'white');
+        c.setAttributeNS(null, 'stroke-width', '1');
+        c.setAttributeNS(null, 'fill', '#2b2929');
+
+        t1.setAttributeNS(null, 'fill', '#ffffff');
+        t1.setAttributeNS(null, 'font-size', '17');
+        t1.setAttributeNS(null, 'font-family', 'Garamont');
+        t1.setAttributeNS(null, 'x', '58');
+        t1.setAttributeNS(null, 'y', '155');
+
+        t2.setAttributeNS(null, 'fill', '#ffffff');
+        t2.setAttributeNS(null, 'font-size', '17');
+        t2.setAttributeNS(null, 'font-family', 'Garamont');
+        t2.setAttributeNS(null, 'x', '52');
+        t2.setAttributeNS(null, 'y', '181');
+
+        s.appendChild(a);
+        a.appendChild(c);
+        a.appendChild(t1);
+        a.appendChild(t2);
+
+    }
+
+    if (slide.classList.contains('corner_controls')){
+        l.setAttributeNS(null, 'x', '50');
+        l.setAttributeNS(null, 'y', '75');
+
+        r.setAttributeNS(null, 'x', '100');
+        r.setAttributeNS(null, 'y', '75');
+        
+        u.setAttributeNS(null, 'x', '70');
+        u.setAttributeNS(null, 'y', '50');
+
+        d.setAttributeNS(null, 'x', '70');
+        d.setAttributeNS(null, 'y', '100');
+    }
+    else{
+        l.setAttributeNS(null, 'x', '500');
+        l.setAttributeNS(null, 'y', '500');
+
+        r.setAttributeNS(null, 'x', '100');
+        r.setAttributeNS(null, 'y', '75');
+        
+        u.setAttributeNS(null, 'x', '70');
+        u.setAttributeNS(null, 'y', '50');
+
+        d.setAttributeNS(null, 'x', '70');
+        d.setAttributeNS(null, 'y', '100');
+    }
+
+    l.setAttributeNS(null, 'onclick', 'left()');
+    r.setAttributeNS(null, 'onclick', 'right()');
+    u.setAttributeNS(null, 'onclick', 'up()');
+    d.setAttributeNS(null, 'onclick', 'down()');
+
+    if (accessible[0]) s.appendChild(l);
+    if (accessible[1]) s.appendChild(r);
+    if (accessible[2]) s.appendChild(u);
+    if (accessible[3]) s.appendChild(d);
+
+    slide.classList.add('processed'); 
 }
