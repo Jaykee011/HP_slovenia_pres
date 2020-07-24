@@ -4,7 +4,7 @@ var nav_targets = {
     'test'                 :['ov', 'ov',   'ov',   'ov'],
 
     'begin'                 :[null, 'ov',    null,   'about'],
-    'about'                 :[null, 'ov',   'begin',    'test1'],
+    'about'                 :[null, null,   'begin',    null],
     'ov'                    :['begin',  null,   null,   null],
     // ALEN
     'alen_1540_1'           :[null, 'alen_1711_1',  'alen_1540_5',  'alen_1540_2'],
@@ -168,24 +168,10 @@ function render_navigation(){
     var slide = Reveal.getCurrentSlide();
     if (slide.classList.contains('processed') || slide.classList.contains('no_controls')) return;
 
-    var control_svg = slide.querySelector('.control_svg');
-    if (!control_svg){
-        var d = document.createElement('div');
-        var s = document.createElementNS("http://www.w3.org/2000/svg",'svg');
-
-        d.classList.add('nav-con');
-        s.classList.add('control_svg');
-
-        s.setAttributeNS(null, 'height', '100%');
-        s.setAttributeNS(null, 'width', '100%');
-        s.setAttributeNS(null, 'viewbox', '0 0 1900 1000');
-        s.setAttributeNS(null, 'preserveAspectRatio', 'none');
-        
-        d.appendChild(s);
-        slide.appendChild(d);
-    }
-    else{
-        s = control_svg;
+    var s = slide.querySelector('.control_svg');
+    if (!s){
+        console.log('missing control element');
+        return;
     }
 
     var page_id = slide.id;
@@ -273,17 +259,17 @@ function render_navigation(){
         d.setAttributeNS(null, 'y', '100');
     }
     else{
-        l.setAttributeNS(null, 'x', '500');
+        l.setAttributeNS(null, 'x', '350');
         l.setAttributeNS(null, 'y', '500');
 
-        r.setAttributeNS(null, 'x', '100');
-        r.setAttributeNS(null, 'y', '75');
+        r.setAttributeNS(null, 'x', '1850');
+        r.setAttributeNS(null, 'y', '500');
         
-        u.setAttributeNS(null, 'x', '70');
-        u.setAttributeNS(null, 'y', '50');
+        u.setAttributeNS(null, 'x', '1100');
+        u.setAttributeNS(null, 'y', '40');
 
-        d.setAttributeNS(null, 'x', '70');
-        d.setAttributeNS(null, 'y', '100');
+        d.setAttributeNS(null, 'x', '1100');
+        d.setAttributeNS(null, 'y', '950');
     }
 
     l.setAttributeNS(null, 'onclick', 'left()');

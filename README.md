@@ -1,5 +1,5 @@
 # URGENT:
-	- all slides should have a 100%x100% SVG of control_svg class with 0 0 1900 1000 viewport to ensure proper injection of control arrows 
+	- remove redundant controls (e.g. nav-zuz) 
 
 # TODO:
 	- completely replace built-in arrows with svg ones to accomodate for resizing
