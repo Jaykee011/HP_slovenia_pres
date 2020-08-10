@@ -228,7 +228,7 @@ function render_navigation(){
     u.textContent = '\uf106';
     d.textContent = '\uf107';
 
-
+    // projects overview button
     if (slide.classList.contains('po_button')){
         var a = document.createElementNS("http://www.w3.org/2000/svg",'a');
         var c = document.createElementNS("http://www.w3.org/2000/svg",'circle');
@@ -266,6 +266,7 @@ function render_navigation(){
 
     }
 
+    // arrows
     if (slide.classList.contains('corner_controls')){
         l.setAttributeNS(null, 'x', '50');
         l.setAttributeNS(null, 'y', '75');
@@ -302,6 +303,100 @@ function render_navigation(){
     if (accessible[1]) s.appendChild(r);
     if (accessible[2]) s.appendChild(u);
     if (accessible[3]) s.appendChild(d);
+
+    // help
+    var h = document.createElementNS("http://www.w3.org/2000/svg",'circle');
+    var ht = document.createElementNS("http://www.w3.org/2000/svg",'text');
+    ht.textContent = '?';
+
+    ht.setAttributeNS(null, 'fill', '#ffffff');
+    ht.setAttributeNS(null, 'font-size', '17');
+    ht.setAttributeNS(null, 'font-family', 'Garamont');
+    ht.setAttributeNS(null, 'x', '26');
+    ht.setAttributeNS(null, 'y', '905');
+
+    h.setAttributeNS(null, 'cx', '30');
+    h.setAttributeNS(null, 'cy', '900');
+    h.setAttributeNS(null, 'r', '15');
+    h.setAttributeNS(null, 'stroke', 'white');
+    h.setAttributeNS(null, 'stroke-width', '1');
+    h.setAttributeNS(null, 'fill', '#2b2929');
+
+    h.classList.add('help_button');
+    ht.classList.add('help_button');
+    
+    s.appendChild(h);
+    s.appendChild(ht);
+
+    var hr = document.createElementNS("http://www.w3.org/2000/svg",'rect');
+    var hrt = document.createElementNS("http://www.w3.org/2000/svg",'text');
+    var hrts = document.createElementNS("http://www.w3.org/2000/svg",'tspan');
+    var hrts2 = document.createElementNS("http://www.w3.org/2000/svg",'tspan');
+    var hrts3 = document.createElementNS("http://www.w3.org/2000/svg",'tspan');
+    var hrts4 = document.createElementNS("http://www.w3.org/2000/svg",'tspan');
+    var hrts5 = document.createElementNS("http://www.w3.org/2000/svg",'tspan');
+    var hrts6 = document.createElementNS("http://www.w3.org/2000/svg",'tspan');
+
+    hrt.textContent = "Our webpage can be a bit peculiar to navigate, but worry not, help is here!";
+    hrts.textContent = "- You can navigate interconnected pages using either arrows on the screen or arrow keys";
+    hrts2.textContent = "- The arrow keys might sometimes not work after clicking a button because of browser quirks.";
+    hrts3.textContent = "- If that happens to you, click on any empty space on the page and they should work again!";
+    hrts4.textContent = "- The project overview button returns you to the page with links to all the student projects.";
+    hrts5.textContent = "- The period overview  button returns you to the top page with links to all the period's projects.";
+    hrts6.textContent = "- From the period overview page, you can navigate upwards to explore more about the period as a whole.";
+
+
+    hr.setAttributeNS(null, 'x', '380');
+    hr.setAttributeNS(null, 'y', '50');
+    hr.setAttributeNS(null, 'width', '565');
+    hr.setAttributeNS(null, 'height', '170');
+    hr.setAttributeNS(null, 'stroke', 'white');
+    hr.setAttributeNS(null, 'stroke-width', '1');
+    hr.setAttributeNS(null, 'fill', 'rgb(43,41,41,0.9)');
+    hr.setAttributeNS(null, 'visibility', 'hidden');
+
+    hrt.setAttributeNS(null, 'x', '390');
+    hrt.setAttributeNS(null, 'y', '70');
+    hrt.setAttributeNS(null, 'font-family', 'Garamond');
+    hrt.setAttributeNS(null, 'font-size', '15');
+    hrt.setAttributeNS(null, 'fill', '#ffffff');
+    hrt.setAttributeNS(null, 'visibility', 'hidden');
+
+    hrts.setAttributeNS(null, 'x', '390');
+    hrts.setAttributeNS(null, 'y', '110');
+    hrts.setAttributeNS(null, 'font-size', '13');
+    
+    hrts2.setAttributeNS(null, 'x', '400');
+    hrts2.setAttributeNS(null, 'y', '130');
+    hrts2.setAttributeNS(null, 'font-size', '13');
+    
+    hrts3.setAttributeNS(null, 'x', '400');
+    hrts3.setAttributeNS(null, 'y', '150');
+    hrts3.setAttributeNS(null, 'font-size', '13');
+    
+    hrts4.setAttributeNS(null, 'x', '390');
+    hrts4.setAttributeNS(null, 'y', '170');
+    hrts4.setAttributeNS(null, 'font-size', '13');
+    
+    hrts5.setAttributeNS(null, 'x', '390');
+    hrts5.setAttributeNS(null, 'y', '190');
+    hrts5.setAttributeNS(null, 'font-size', '13');
+    
+    hrts6.setAttributeNS(null, 'x', '390');
+    hrts6.setAttributeNS(null, 'y', '210');
+    hrts6.setAttributeNS(null, 'font-size', '13');
+
+    hr.classList.add('help');
+    hrt.classList.add('help');
+
+    s.appendChild(hr);
+    s.appendChild(hrt);
+    hrt.appendChild(hrts);
+    hrt.appendChild(hrts2);
+    hrt.appendChild(hrts3);
+    hrt.appendChild(hrts4);
+    hrt.appendChild(hrts5);
+    hrt.appendChild(hrts6);
 
     slide.classList.add('processed'); 
 }
