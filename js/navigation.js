@@ -74,6 +74,17 @@ var nav_targets = {
     'Michel_1950_4.2'       :['Michel_1895_4.1',    null,   'Michel_1950_2.3',  'Michel_5.2'],
     'Michel_5.2'            :[null, null,   'Michel_1950_4.2',  'Michel_1950_1.3'],
 
+    //KRYSTIAN
+    'krystian_0'            :[null, null,    'krystian_980_1',   'krystian_980_0'],
+    'krystian_980_0'        :[null, null,    'krystian_0',   'krystian_980_1'],
+    'krystian_980_1'        :[null, 'krystian_1280_0',    'krystian_980_0',   'krystian_980_0'],
+    'krystian_1280_0'       :['krystian_980_1', 'krystian_1480_0',    null,   null],
+    'krystian_1480_0'       :['krystian_1280_0', 'krystian_1680_0',    null,   null],
+    'krystian_1680_0'       :['krystian_1480_0', 'krystian_1780_0',    null,   'krystian_1680_1'],
+    'krystian_1680_1'       :[null, 'krystian_1780_1',    'krystian_1680_0',   null],
+    'krystian_1780_0'       :['krystian_1680_0', null,    null,   'krystian_1780_1'],
+    'krystian_1780_1'       :['krystian_1680_1', null,    'krystian_1780_0',   null],
+
     //MANUELA1
     'Manuela_1900_0'        :[null, null,    'Manuela_1900_3',   'Manuela_1900_1'],
     'Manuela_1900_1'        :[null, null,    'Manuela_1900_0',   'Manuela_1900_2'],
@@ -99,9 +110,19 @@ var nav_targets = {
     't1800'                 :['t1755',  't1850',    '1755-1800_0',  '1755-1800_7'],
     't1850'                 :['t1800',  't1939',    '1800-1850_0',  '1800-1850_5'],
     't1939'                 :['t1850',  't1940',    '1850-1939_0',  '1850-1939_4'],
-    't1940'                 :['t1939',  null,   '1940_0',   null],
-        
-    '1940_0'                :[null, null,   '1940_p',   't1940'],
+    't1940'                 :['t1939',  null,   '1940_0',   '1939-1950_10'],
+    
+    '1940_0'                :[null, null, '1939-1950_1', 't1940'],
+    '1939-1950_1'           :[null, null,   '1939-1950_2', '1940_0'],
+    '1939-1950_2'           :[null, null,   '1939-1950_3', '1939-1950_1'],
+    '1939-1950_3'           :[null, null,   '1939-1950_4', '1939-1950_2'],
+    '1939-1950_4'           :[null, null,   '1939-1950_5', '1939-1950_3'],
+    '1939-1950_5'           :[null, null,   '1939-1950_6', '1939-1950_4'],
+    '1939-1950_6'           :[null, null,   '1939-1950_7', '1939-1950_5'],
+    '1939-1950_7'           :[null, null,   '1939-1950_8', '1939-1950_6'],
+    '1939-1950_8'           :[null, null,   '1939-1950_9', '1939-1950_7'],
+    '1939-1950_9'           :[null, null,   '1939-1950_10', '1939-1950_8'],
+    '1939-1950_10'          :[null, null,   't1940', '1939-1950_9'],
         
     '1850-1939_0'           :[null, null,   '1850-1939_1',  't1939'],
     '1850-1939_1'           :[null, null,   '1850-1939_2',  '1850-1939_0'],
@@ -259,17 +280,17 @@ function render_navigation(){
         d.setAttributeNS(null, 'y', '100');
     }
     else{
-        l.setAttributeNS(null, 'x', '350');
+        l.setAttributeNS(null, 'x', '330');
         l.setAttributeNS(null, 'y', '500');
 
-        r.setAttributeNS(null, 'x', '1850');
+        r.setAttributeNS(null, 'x', '1870');
         r.setAttributeNS(null, 'y', '500');
         
         u.setAttributeNS(null, 'x', '1100');
-        u.setAttributeNS(null, 'y', '40');
+        u.setAttributeNS(null, 'y', '25');
 
         d.setAttributeNS(null, 'x', '1100');
-        d.setAttributeNS(null, 'y', '950');
+        d.setAttributeNS(null, 'y', '990');
     }
 
     l.setAttributeNS(null, 'onclick', 'left()');
