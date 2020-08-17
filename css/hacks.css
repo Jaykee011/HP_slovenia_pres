@@ -40,7 +40,7 @@ section {
 
 .nav {
   flex: 1;
-  z-index: 10;
+  z-index: 12;
   margin-left: auto;
   margin-bottom: auto;
   padding: 0 0 0 0;
@@ -66,6 +66,7 @@ section {
   width: 100%;
   height: 100%;
   position: absolute;
+  z-index: 11 !important;
   top: 0px;
   left: 0px;
 }
@@ -100,6 +101,7 @@ section {
   top: 0px;
   left: 0px;
   width: 100%;
+  z-index: -1;
 }
 
 .dynam_a {
@@ -131,7 +133,7 @@ section {
 
 .fa {
   color: black;
-  font-family: FontAwesome;
+  /* font-family: FontAwesome; */
 }
 
 .fa:hover {

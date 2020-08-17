@@ -195,6 +195,29 @@ function render_navigation(){
         return;
     }
 
+    // TODO: site map
+    var m = document.createElementNS("http://www.w3.org/2000/svg",'circle');
+    var mt = document.createElementNS("http://www.w3.org/2000/svg",'text');
+    mt.textContent = 'Map';
+
+    mt.setAttributeNS(null, 'fill', '#ffffff');
+    mt.setAttributeNS(null, 'font-size', '15');
+    mt.setAttributeNS(null, 'font-family', 'Garamont');
+    mt.setAttributeNS(null, 'x', '146');
+    mt.setAttributeNS(null, 'y', '905');
+
+    m.setAttributeNS(null, 'cx', '160');
+    m.setAttributeNS(null, 'cy', '900');
+    m.setAttributeNS(null, 'r', '25');
+    m.setAttributeNS(null, 'stroke', 'white');
+    m.setAttributeNS(null, 'stroke-width', '1');
+    m.setAttributeNS(null, 'fill', '#2b2929');
+
+    m.classList.add('help_button');
+    mt.classList.add('help_button');
+    
+    s.appendChild(m);
+    s.appendChild(mt);
     
     // help
     var h = document.createElementNS("http://www.w3.org/2000/svg",'circle');
@@ -204,19 +227,12 @@ function render_navigation(){
     ht.setAttributeNS(null, 'fill', '#ffffff');
     ht.setAttributeNS(null, 'font-size', '15');
     ht.setAttributeNS(null, 'font-family', 'Garamont');
-    ht.setAttributeNS(null, 'x', '66');
+    ht.setAttributeNS(null, 'x', '91');
     ht.setAttributeNS(null, 'y', '905');
 
-    h.setAttributeNS(null, 'cx', '80');
+    h.setAttributeNS(null, 'cx', '105');
     h.setAttributeNS(null, 'cy', '900');
     h.setAttributeNS(null, 'r', '25');
-    h.setAttributeNS(null, 'stroke', 'white');
-    h.setAttributeNS(null, 'stroke-width', '1');
-    h.setAttributeNS(null, 'fill', '#2b2929');
-
-    h.setAttributeNS(null, 'cx', '80');
-    h.setAttributeNS(null, 'cy', '900');
-    h.setAttributeNS(null, 'r', '30');
     h.setAttributeNS(null, 'stroke', 'white');
     h.setAttributeNS(null, 'stroke-width', '1');
     h.setAttributeNS(null, 'fill', '#2b2929');
@@ -244,7 +260,6 @@ function render_navigation(){
     hrts5.textContent = "- The period overview  button returns you to the top page with links to all the period's projects.";
     hrts6.textContent = "- From the period overview page, you can navigate upwards to explore more about the period as a whole.";
 
-//x+700
     hr.setAttributeNS(null, 'x', '1080');
     hr.setAttributeNS(null, 'y', '50');
     hr.setAttributeNS(null, 'width', '740');
@@ -349,10 +364,10 @@ function render_navigation(){
     // d.textContent = '\uf107';
 
     // arrows
-    l.textContent = '\uf060';
-    r.textContent = '\uf061';
-    u.textContent = '\uf062';
-    d.textContent = '\uf063';
+    l.textContent = '\uD83E\uDC68';
+    r.textContent = '\uD83E\uDC6A';
+    u.textContent = '\uD83E\uDC69';
+    d.textContent = '\uD83E\uDC6B';
 
     // projects overview button
     if (slide.classList.contains('po_button')){
@@ -366,8 +381,8 @@ function render_navigation(){
 
         a.setAttribute('href', '#/ov');
 
-        c.setAttributeNS(null, 'cx', '137');
-        c.setAttributeNS(null, 'cy', '680');
+        c.setAttributeNS(null, 'cx', '134');
+        c.setAttributeNS(null, 'cy', '830');
         c.setAttributeNS(null, 'r', '45');
         c.setAttributeNS(null, 'stroke', 'white');
         c.setAttributeNS(null, 'stroke-width', '1');
@@ -376,14 +391,14 @@ function render_navigation(){
         t1.setAttributeNS(null, 'fill', '#ffffff');
         t1.setAttributeNS(null, 'font-size', '17');
         t1.setAttributeNS(null, 'font-family', 'Garamont');
-        t1.setAttributeNS(null, 'x', '110');
-        t1.setAttributeNS(null, 'y', '675');
+        t1.setAttributeNS(null, 'x', '107');
+        t1.setAttributeNS(null, 'y', '825');
 
         t2.setAttributeNS(null, 'fill', '#ffffff');
         t2.setAttributeNS(null, 'font-size', '17');
         t2.setAttributeNS(null, 'font-family', 'Garamont');
-        t2.setAttributeNS(null, 'x', '104');
-        t2.setAttributeNS(null, 'y', '701');
+        t2.setAttributeNS(null, 'x', '101');
+        t2.setAttributeNS(null, 'y', '851');
 
         s.appendChild(a);
         a.appendChild(c);
@@ -392,84 +407,30 @@ function render_navigation(){
 
     }
 
-    // arrows
-    // if (slide.classList.contains('corner_controls')){
-        // Small
-        // l.setAttributeNS(null, 'x', '50');
-        // l.setAttributeNS(null, 'y', '75');
-
-        // r.setAttributeNS(null, 'x', '100');
-        // r.setAttributeNS(null, 'y', '75');
-        
-        // u.setAttributeNS(null, 'x', '70');
-        // u.setAttributeNS(null, 'y', '50');
-
-        // d.setAttributeNS(null, 'x', '70');
-        // d.setAttributeNS(null, 'y', '100');
-
-        // Large
-    //     l.setAttributeNS(null, 'x', '35');
-    //     l.setAttributeNS(null, 'y', '700');
-
-    //     r.setAttributeNS(null, 'x', '190');
-    //     r.setAttributeNS(null, 'y', '700');
-        
-    //     u.setAttributeNS(null, 'x', '110');
-    //     u.setAttributeNS(null, 'y', '625');
-
-    //     d.setAttributeNS(null, 'x', '110');
-    //     d.setAttributeNS(null, 'y', '777');
-        
-    //     lt.setAttributeNS(null, 'x', '35');
-    //     lt.setAttributeNS(null, 'y', '730');
-
-    //     rt.setAttributeNS(null, 'x', '180');
-    //     rt.setAttributeNS(null, 'y', '730');
-        
-    //     ut.setAttributeNS(null, 'x', '80');
-    //     ut.setAttributeNS(null, 'y', '570');
-
-    //     dt.setAttributeNS(null, 'x', '80');
-    //     dt.setAttributeNS(null, 'y', '800');
-    // }
-    // else{
-    //     l.setAttributeNS(null, 'x', '330');
-    //     l.setAttributeNS(null, 'y', '500');
-
-    //     r.setAttributeNS(null, 'x', '1870');
-    //     r.setAttributeNS(null, 'y', '500');
-        
-    //     u.setAttributeNS(null, 'x', '1100');
-    //     u.setAttributeNS(null, 'y', '25');
-
-    //     d.setAttributeNS(null, 'x', '1100');
-    //     d.setAttributeNS(null, 'y', '990');
-    // }
-
     // Large
-    l.setAttributeNS(null, 'x', '35');
-    l.setAttributeNS(null, 'y', '700');
+    l.setAttributeNS(null, 'x', '30');
+    l.setAttributeNS(null, 'y', '660');
 
-    r.setAttributeNS(null, 'x', '190');
-    r.setAttributeNS(null, 'y', '700');
+    r.setAttributeNS(null, 'x', '185');
+    r.setAttributeNS(null, 'y', '660');
     
-    u.setAttributeNS(null, 'x', '110');
-    u.setAttributeNS(null, 'y', '625');
+    u.setAttributeNS(null, 'x', '105');
+    u.setAttributeNS(null, 'y', '585');
 
-    d.setAttributeNS(null, 'x', '110');
-    d.setAttributeNS(null, 'y', '777');
+    d.setAttributeNS(null, 'x', '105');
+    d.setAttributeNS(null, 'y', '737');
     
-    lt.setAttributeNS(null, 'x', '35');
-    lt.setAttributeNS(null, 'y', '730');
+    lt.setAttributeNS(null, 'x', '30');
+    lt.setAttributeNS(null, 'y', '690');
 
-    rt.setAttributeNS(null, 'x', '180');
-    rt.setAttributeNS(null, 'y', '730');
+    rt.setAttributeNS(null, 'x', '175');
+    rt.setAttributeNS(null, 'y', '690');
     
-    ut.setAttributeNS(null, 'x', '80');
-    ut.setAttributeNS(null, 'y', '570');
+    ut.setAttributeNS(null, 'x', '75');
+    ut.setAttributeNS(null, 'y', '530');
 
-    dt.setAttributeNS(null, 'x', '80');
-    dt.setAttributeNS(null, 'y', '800');
+    dt.setAttributeNS(null, 'x', '75');
+    dt.setAttributeNS(null, 'y', '760');
 
     l.setAttributeNS(null, 'onclick', 'left()');
     r.setAttributeNS(null, 'onclick', 'right()');
