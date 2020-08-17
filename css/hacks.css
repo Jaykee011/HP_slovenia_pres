@@ -181,10 +181,12 @@ g:hover circle{
 
 .pointer{
   cursor: pointer;
+  font-size: 60px !important;
 }
 
 .pointer_text{
   cursor: pointer;
+  font-size: 25px !important;
 }
 
 .help_button:hover ~ .help{

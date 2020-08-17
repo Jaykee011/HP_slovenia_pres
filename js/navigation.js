@@ -187,7 +187,7 @@ function down(){
 
 function render_navigation(){
     var slide = Reveal.getCurrentSlide();
-    if (slide.classList.contains('processed') || slide.classList.contains('no_controls')) return;
+    if (slide.classList.contains('processed')) return;
 
     var s = slide.querySelector('.control_svg');
     if (!s){
@@ -195,129 +195,28 @@ function render_navigation(){
         return;
     }
 
-    var page_id = slide.id;
-    var nav_style = null;
-    var accessible = [];
-
-    if (page_id in nav_targets){
-        accessible = nav_targets[page_id];
-    }
     
-    var l = document.createElementNS("http://www.w3.org/2000/svg",'text');
-    var r = document.createElementNS("http://www.w3.org/2000/svg",'text');
-    var d = document.createElementNS("http://www.w3.org/2000/svg",'text');
-    var u = document.createElementNS("http://www.w3.org/2000/svg",'text');
-    
-    l.classList.add('fa');
-    r.classList.add('fa');
-    d.classList.add('fa');
-    u.classList.add('fa');
-    l.classList.add('pointer');
-    r.classList.add('pointer');
-    d.classList.add('pointer');
-    u.classList.add('pointer');
-    
-    // unicode characters for fontawesome
-    // left = &#xf104
-    // right = &#xf105
-    // up = &#xf106
-    // down = &#xf107
-    
-    l.textContent = '\uf104';
-    r.textContent = '\uf105';
-    u.textContent = '\uf106';
-    d.textContent = '\uf107';
-
-    // projects overview button
-    if (slide.classList.contains('po_button')){
-        var a = document.createElementNS("http://www.w3.org/2000/svg",'a');
-        var c = document.createElementNS("http://www.w3.org/2000/svg",'circle');
-        var t1 = document.createElementNS("http://www.w3.org/2000/svg",'text');
-        var t2 = document.createElementNS("http://www.w3.org/2000/svg",'text');
-
-        t1.textContent = 'Projects';
-        t2.textContent = 'Overview';
-
-        a.setAttribute('href', '#/ov');
-
-        c.setAttributeNS(null, 'cx', '85');
-        c.setAttributeNS(null, 'cy', '160');
-        c.setAttributeNS(null, 'r', '45');
-        c.setAttributeNS(null, 'stroke', 'white');
-        c.setAttributeNS(null, 'stroke-width', '1');
-        c.setAttributeNS(null, 'fill', '#2b2929');
-
-        t1.setAttributeNS(null, 'fill', '#ffffff');
-        t1.setAttributeNS(null, 'font-size', '17');
-        t1.setAttributeNS(null, 'font-family', 'Garamont');
-        t1.setAttributeNS(null, 'x', '58');
-        t1.setAttributeNS(null, 'y', '155');
-
-        t2.setAttributeNS(null, 'fill', '#ffffff');
-        t2.setAttributeNS(null, 'font-size', '17');
-        t2.setAttributeNS(null, 'font-family', 'Garamont');
-        t2.setAttributeNS(null, 'x', '52');
-        t2.setAttributeNS(null, 'y', '181');
-
-        s.appendChild(a);
-        a.appendChild(c);
-        a.appendChild(t1);
-        a.appendChild(t2);
-
-    }
-
-    // arrows
-    if (slide.classList.contains('corner_controls')){
-        l.setAttributeNS(null, 'x', '50');
-        l.setAttributeNS(null, 'y', '75');
-
-        r.setAttributeNS(null, 'x', '100');
-        r.setAttributeNS(null, 'y', '75');
-        
-        u.setAttributeNS(null, 'x', '70');
-        u.setAttributeNS(null, 'y', '50');
-
-        d.setAttributeNS(null, 'x', '70');
-        d.setAttributeNS(null, 'y', '100');
-    }
-    else{
-        l.setAttributeNS(null, 'x', '330');
-        l.setAttributeNS(null, 'y', '500');
-
-        r.setAttributeNS(null, 'x', '1870');
-        r.setAttributeNS(null, 'y', '500');
-        
-        u.setAttributeNS(null, 'x', '1100');
-        u.setAttributeNS(null, 'y', '25');
-
-        d.setAttributeNS(null, 'x', '1100');
-        d.setAttributeNS(null, 'y', '990');
-    }
-
-    l.setAttributeNS(null, 'onclick', 'left()');
-    r.setAttributeNS(null, 'onclick', 'right()');
-    u.setAttributeNS(null, 'onclick', 'up()');
-    d.setAttributeNS(null, 'onclick', 'down()');
-
-    if (accessible[0]) s.appendChild(l);
-    if (accessible[1]) s.appendChild(r);
-    if (accessible[2]) s.appendChild(u);
-    if (accessible[3]) s.appendChild(d);
-
     // help
     var h = document.createElementNS("http://www.w3.org/2000/svg",'circle');
     var ht = document.createElementNS("http://www.w3.org/2000/svg",'text');
-    ht.textContent = '?';
+    ht.textContent = 'Help';
 
     ht.setAttributeNS(null, 'fill', '#ffffff');
-    ht.setAttributeNS(null, 'font-size', '17');
+    ht.setAttributeNS(null, 'font-size', '15');
     ht.setAttributeNS(null, 'font-family', 'Garamont');
-    ht.setAttributeNS(null, 'x', '26');
+    ht.setAttributeNS(null, 'x', '66');
     ht.setAttributeNS(null, 'y', '905');
 
-    h.setAttributeNS(null, 'cx', '30');
+    h.setAttributeNS(null, 'cx', '80');
     h.setAttributeNS(null, 'cy', '900');
-    h.setAttributeNS(null, 'r', '15');
+    h.setAttributeNS(null, 'r', '25');
+    h.setAttributeNS(null, 'stroke', 'white');
+    h.setAttributeNS(null, 'stroke-width', '1');
+    h.setAttributeNS(null, 'fill', '#2b2929');
+
+    h.setAttributeNS(null, 'cx', '80');
+    h.setAttributeNS(null, 'cy', '900');
+    h.setAttributeNS(null, 'r', '30');
     h.setAttributeNS(null, 'stroke', 'white');
     h.setAttributeNS(null, 'stroke-width', '1');
     h.setAttributeNS(null, 'fill', '#2b2929');
@@ -345,46 +244,46 @@ function render_navigation(){
     hrts5.textContent = "- The period overview  button returns you to the top page with links to all the period's projects.";
     hrts6.textContent = "- From the period overview page, you can navigate upwards to explore more about the period as a whole.";
 
-
-    hr.setAttributeNS(null, 'x', '380');
+//x+700
+    hr.setAttributeNS(null, 'x', '1080');
     hr.setAttributeNS(null, 'y', '50');
-    hr.setAttributeNS(null, 'width', '565');
-    hr.setAttributeNS(null, 'height', '170');
+    hr.setAttributeNS(null, 'width', '740');
+    hr.setAttributeNS(null, 'height', '215');
     hr.setAttributeNS(null, 'stroke', 'white');
     hr.setAttributeNS(null, 'stroke-width', '1');
     hr.setAttributeNS(null, 'fill', 'rgb(43,41,41,0.9)');
     hr.setAttributeNS(null, 'visibility', 'hidden');
 
-    hrt.setAttributeNS(null, 'x', '390');
-    hrt.setAttributeNS(null, 'y', '70');
+    hrt.setAttributeNS(null, 'x', '1090');
+    hrt.setAttributeNS(null, 'y', '75');
     hrt.setAttributeNS(null, 'font-family', 'Garamond');
-    hrt.setAttributeNS(null, 'font-size', '15');
+    hrt.setAttributeNS(null, 'font-size', '20');
     hrt.setAttributeNS(null, 'fill', '#ffffff');
     hrt.setAttributeNS(null, 'visibility', 'hidden');
 
-    hrts.setAttributeNS(null, 'x', '390');
-    hrts.setAttributeNS(null, 'y', '110');
-    hrts.setAttributeNS(null, 'font-size', '13');
+    hrts.setAttributeNS(null, 'x', '1090');
+    hrts.setAttributeNS(null, 'y', '120');
+    hrts.setAttributeNS(null, 'font-size', '17');
     
-    hrts2.setAttributeNS(null, 'x', '400');
-    hrts2.setAttributeNS(null, 'y', '130');
-    hrts2.setAttributeNS(null, 'font-size', '13');
+    hrts2.setAttributeNS(null, 'x', '1100');
+    hrts2.setAttributeNS(null, 'y', '145');
+    hrts2.setAttributeNS(null, 'font-size', '17');
     
-    hrts3.setAttributeNS(null, 'x', '400');
-    hrts3.setAttributeNS(null, 'y', '150');
-    hrts3.setAttributeNS(null, 'font-size', '13');
+    hrts3.setAttributeNS(null, 'x', '1100');
+    hrts3.setAttributeNS(null, 'y', '170');
+    hrts3.setAttributeNS(null, 'font-size', '17');
     
-    hrts4.setAttributeNS(null, 'x', '390');
-    hrts4.setAttributeNS(null, 'y', '170');
-    hrts4.setAttributeNS(null, 'font-size', '13');
+    hrts4.setAttributeNS(null, 'x', '1090');
+    hrts4.setAttributeNS(null, 'y', '195');
+    hrts4.setAttributeNS(null, 'font-size', '17');
     
-    hrts5.setAttributeNS(null, 'x', '390');
-    hrts5.setAttributeNS(null, 'y', '190');
-    hrts5.setAttributeNS(null, 'font-size', '13');
+    hrts5.setAttributeNS(null, 'x', '1090');
+    hrts5.setAttributeNS(null, 'y', '220');
+    hrts5.setAttributeNS(null, 'font-size', '17');
     
-    hrts6.setAttributeNS(null, 'x', '390');
-    hrts6.setAttributeNS(null, 'y', '210');
-    hrts6.setAttributeNS(null, 'font-size', '13');
+    hrts6.setAttributeNS(null, 'x', '1090');
+    hrts6.setAttributeNS(null, 'y', '245');
+    hrts6.setAttributeNS(null, 'font-size', '17');
 
     hr.classList.add('help');
     hrt.classList.add('help');
@@ -397,6 +296,199 @@ function render_navigation(){
     hrt.appendChild(hrts4);
     hrt.appendChild(hrts5);
     hrt.appendChild(hrts6);
+
+    if (slide.classList.contains('no_controls')) {
+        slide.classList.add('processed'); 
+        return;
+    }
+
+    // Controls
+
+    var page_id = slide.id;
+    var nav_style = null;
+    var accessible = [];
+
+    if (page_id in nav_targets){
+        accessible = nav_targets[page_id];
+    }
+    
+    var l = document.createElementNS("http://www.w3.org/2000/svg",'text');
+    var r = document.createElementNS("http://www.w3.org/2000/svg",'text');
+    var d = document.createElementNS("http://www.w3.org/2000/svg",'text');
+    var u = document.createElementNS("http://www.w3.org/2000/svg",'text');
+    
+    var lt = document.createElementNS("http://www.w3.org/2000/svg",'text');
+    var rt = document.createElementNS("http://www.w3.org/2000/svg",'text');
+    var dt = document.createElementNS("http://www.w3.org/2000/svg",'text');
+    var ut = document.createElementNS("http://www.w3.org/2000/svg",'text');
+    
+    l.classList.add('fa');
+    r.classList.add('fa');
+    d.classList.add('fa');
+    u.classList.add('fa');
+    l.classList.add('pointer');
+    r.classList.add('pointer');
+    d.classList.add('pointer');
+    u.classList.add('pointer');
+    
+    lt.classList.add('pointer_text');
+    rt.classList.add('pointer_text');
+    dt.classList.add('pointer_text');
+    ut.classList.add('pointer_text');
+    
+    lt.textContent = 'Older';
+    rt.textContent = 'Newer';
+    ut.textContent = 'Change View';
+    dt.textContent = 'Change View';
+
+    // unicode characters for fontawesome
+    // carets
+    // l.textContent = '\uf104';
+    // r.textContent = '\uf105';
+    // u.textContent = '\uf106';
+    // d.textContent = '\uf107';
+
+    // arrows
+    l.textContent = '\uf060';
+    r.textContent = '\uf061';
+    u.textContent = '\uf062';
+    d.textContent = '\uf063';
+
+    // projects overview button
+    if (slide.classList.contains('po_button')){
+        var a = document.createElementNS("http://www.w3.org/2000/svg",'a');
+        var c = document.createElementNS("http://www.w3.org/2000/svg",'circle');
+        var t1 = document.createElementNS("http://www.w3.org/2000/svg",'text');
+        var t2 = document.createElementNS("http://www.w3.org/2000/svg",'text');
+
+        t1.textContent = 'Projects';
+        t2.textContent = 'Overview';
+
+        a.setAttribute('href', '#/ov');
+
+        c.setAttributeNS(null, 'cx', '137');
+        c.setAttributeNS(null, 'cy', '680');
+        c.setAttributeNS(null, 'r', '45');
+        c.setAttributeNS(null, 'stroke', 'white');
+        c.setAttributeNS(null, 'stroke-width', '1');
+        c.setAttributeNS(null, 'fill', '#2b2929');
+
+        t1.setAttributeNS(null, 'fill', '#ffffff');
+        t1.setAttributeNS(null, 'font-size', '17');
+        t1.setAttributeNS(null, 'font-family', 'Garamont');
+        t1.setAttributeNS(null, 'x', '110');
+        t1.setAttributeNS(null, 'y', '675');
+
+        t2.setAttributeNS(null, 'fill', '#ffffff');
+        t2.setAttributeNS(null, 'font-size', '17');
+        t2.setAttributeNS(null, 'font-family', 'Garamont');
+        t2.setAttributeNS(null, 'x', '104');
+        t2.setAttributeNS(null, 'y', '701');
+
+        s.appendChild(a);
+        a.appendChild(c);
+        a.appendChild(t1);
+        a.appendChild(t2);
+
+    }
+
+    // arrows
+    // if (slide.classList.contains('corner_controls')){
+        // Small
+        // l.setAttributeNS(null, 'x', '50');
+        // l.setAttributeNS(null, 'y', '75');
+
+        // r.setAttributeNS(null, 'x', '100');
+        // r.setAttributeNS(null, 'y', '75');
+        
+        // u.setAttributeNS(null, 'x', '70');
+        // u.setAttributeNS(null, 'y', '50');
+
+        // d.setAttributeNS(null, 'x', '70');
+        // d.setAttributeNS(null, 'y', '100');
+
+        // Large
+    //     l.setAttributeNS(null, 'x', '35');
+    //     l.setAttributeNS(null, 'y', '700');
+
+    //     r.setAttributeNS(null, 'x', '190');
+    //     r.setAttributeNS(null, 'y', '700');
+        
+    //     u.setAttributeNS(null, 'x', '110');
+    //     u.setAttributeNS(null, 'y', '625');
+
+    //     d.setAttributeNS(null, 'x', '110');
+    //     d.setAttributeNS(null, 'y', '777');
+        
+    //     lt.setAttributeNS(null, 'x', '35');
+    //     lt.setAttributeNS(null, 'y', '730');
+
+    //     rt.setAttributeNS(null, 'x', '180');
+    //     rt.setAttributeNS(null, 'y', '730');
+        
+    //     ut.setAttributeNS(null, 'x', '80');
+    //     ut.setAttributeNS(null, 'y', '570');
+
+    //     dt.setAttributeNS(null, 'x', '80');
+    //     dt.setAttributeNS(null, 'y', '800');
+    // }
+    // else{
+    //     l.setAttributeNS(null, 'x', '330');
+    //     l.setAttributeNS(null, 'y', '500');
+
+    //     r.setAttributeNS(null, 'x', '1870');
+    //     r.setAttributeNS(null, 'y', '500');
+        
+    //     u.setAttributeNS(null, 'x', '1100');
+    //     u.setAttributeNS(null, 'y', '25');
+
+    //     d.setAttributeNS(null, 'x', '1100');
+    //     d.setAttributeNS(null, 'y', '990');
+    // }
+
+    // Large
+    l.setAttributeNS(null, 'x', '35');
+    l.setAttributeNS(null, 'y', '700');
+
+    r.setAttributeNS(null, 'x', '190');
+    r.setAttributeNS(null, 'y', '700');
+    
+    u.setAttributeNS(null, 'x', '110');
+    u.setAttributeNS(null, 'y', '625');
+
+    d.setAttributeNS(null, 'x', '110');
+    d.setAttributeNS(null, 'y', '777');
+    
+    lt.setAttributeNS(null, 'x', '35');
+    lt.setAttributeNS(null, 'y', '730');
+
+    rt.setAttributeNS(null, 'x', '180');
+    rt.setAttributeNS(null, 'y', '730');
+    
+    ut.setAttributeNS(null, 'x', '80');
+    ut.setAttributeNS(null, 'y', '570');
+
+    dt.setAttributeNS(null, 'x', '80');
+    dt.setAttributeNS(null, 'y', '800');
+
+    l.setAttributeNS(null, 'onclick', 'left()');
+    r.setAttributeNS(null, 'onclick', 'right()');
+    u.setAttributeNS(null, 'onclick', 'up()');
+    d.setAttributeNS(null, 'onclick', 'down()');
+
+    lt.setAttributeNS(null, 'onclick', 'left()');
+    rt.setAttributeNS(null, 'onclick', 'right()');
+    ut.setAttributeNS(null, 'onclick', 'up()');
+    dt.setAttributeNS(null, 'onclick', 'down()');
+
+    if (accessible[0]) s.appendChild(l);
+    if (accessible[0]) s.appendChild(lt);
+    if (accessible[1]) s.appendChild(r);
+    if (accessible[1]) s.appendChild(rt);
+    if (accessible[2]) s.appendChild(u);
+    if (accessible[2]) s.appendChild(ut);
+    if (accessible[3]) s.appendChild(d);
+    if (accessible[3]) s.appendChild(dt);
 
     slide.classList.add('processed'); 
 }
