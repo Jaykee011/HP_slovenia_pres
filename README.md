@@ -2,6 +2,7 @@
 	- write a user/programmer manual
 	- separate logic into different files
 	- clean up directory tree
+	- Render controls under map blips dynamically to reduce code bloat
 
 # HELP
 Our webpage can be a bit peculiar to navigate, but worry not, help is here!

@@ -11,9 +11,13 @@
   display: flex;
 }
 
-.height_override{
-    height: 100% !important;
+section {
+  height: 100% !important;
 }
+
+/* .height_override{
+    height: 100% !important;
+} */
 
 .pad_override{
     padding: 0 0 0 0 !important;
@@ -127,6 +131,11 @@
 
 .fa {
   color: black;
+  font-family: FontAwesome;
+}
+
+.fa:hover {
+  color: grey;
 }
 
 g text{
@@ -138,9 +147,25 @@ g text{
 g circle{
   transition: all .4s ease;
   /* fill: rgb(43, 41, 41, .7); */
-  fill: rgba(255, 255, 255, 0.85);
-  stroke: black;
-  stroke-width: 1px;
+  fill: rgba(255, 255, 255, 0.25);
+  stroke: white;
+  stroke-width: 3px;
+}
+
+g .fullbright{
+  transition: all .4s ease;
+  /* fill: rgb(43, 41, 41, .7); */
+  fill: rgba(255, 255, 255, 0.8) !important;
+  stroke: white;
+  stroke-width: 3px;
+}
+
+g .fullbright:hover{
+  transition: all .4s ease;
+  /* fill: rgb(43, 41, 41, .7); */
+  fill: rgba(255, 255, 255, 1) !important;
+  stroke: white;
+  stroke-width: 3px;
 }
 
 g:hover text{
@@ -150,14 +175,15 @@ g:hover text{
 
 g:hover circle{
   /* fill: rgb(43, 41, 41, 1); */
-  fill: rgb(255, 255, 255, 1);
+  fill: rgb(255, 255, 255, 0.8);
 }
 
-.fa{
-  font-family: FontAwesome;
-}
 
 .pointer{
+  cursor: pointer;
+}
+
+.pointer_text{
   cursor: pointer;
 }
 
