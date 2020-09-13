@@ -2,195 +2,209 @@
  * HACKS
  *********************************************/
  .scrollable {
-    overflow-y: auto  !important;
-    overflow-x: auto !important;
-    height: 100%;
+  overflow-y: auto  !important;
+  overflow-x: auto !important;
+  height: 100%;
 }
 
 .container {
-  display: flex;
+display: flex;
 }
 
 section {
-  height: 100% !important;
+height: 100% !important;
 }
 
 /* .height_override{
-    height: 100% !important;
+  height: 100% !important;
 } */
 
 .pad_override{
-    padding: 0 0 0 0 !important;
+  padding: 0 0 0 0 !important;
 }
 
 .menu-ov{
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  min-width: 25%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.8);
+position: absolute;
+top: 0px;
+left: 0px;
+min-width: 25%;
+height: 100%;
+background: rgba(255, 255, 255, 0.8);
 }
 
 .filler-ov{
-  flex: 2;
-  width: auto;
-  height: auto;
+flex: 2;
+width: auto;
+height: auto;
 }
 
 .nav {
-  flex: 1;
-  z-index: 12;
-  margin-left: auto;
-  margin-bottom: auto;
-  padding: 0 0 0 0;
-  width: auto;
-  height: auto;
-  /* max-width: auto;
-  max-height: auto;
-  min-width: 320px;
-  min-height: 420px; */
-  /* background-color: red; */
+flex: 1;
+z-index: 12;
+margin-left: auto;
+margin-bottom: auto;
+padding: 0 0 0 0;
+width: auto;
+height: auto;
+/* max-width: auto;
+max-height: auto;
+min-width: 320px;
+min-height: 420px; */
+/* background-color: red; */
 }
 
 .nav-zuz {
-  position: fixed;
-  z-index: 10;
-  top: 40px;
-  left: 22px;
+position: fixed;
+z-index: 10;
+top: 40px;
+left: 22px;
 }
 
 .nav-con {
-  padding: 0 0 0 0;
-  margin: 0 0 0 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 11 !important;
-  top: 0px;
-  left: 0px;
+padding: 0 0 0 0;
+margin: 0 0 0 0;
+width: 100%;
+height: 100%;
+position: absolute;
+z-index: 11 !important;
+top: 0px;
+left: 0px;
 }
 .nav-con_a {
-  padding: 0 0 0 0;
-  margin: 0 0 0 0;
-  width: 100%;
-  height: 100%;
-  position: sticky;
-  top: 0px;
-  left: 0px;
+padding: 0 0 0 0;
+margin: 0 0 0 0;
+width: 100%;
+height: 100%;
+position: sticky;
+top: 0px;
+left: 0px;
 }
 
 .content {
-  flex: 5;
-  /* max-width: auto;
-  max-height: auto;
-  min-width: 1500px;
-  min-height: 850px; */
+flex: 5;
+/* max-width: auto;
+max-height: auto;
+min-width: 1500px;
+min-height: 850px; */
 }
 
 .static {
-  position: sticky;
-  top: 0px;
-  left: 0px;
-  width: 1920px;
-  height: 1080px;
+position: sticky;
+top: 0px;
+left: 0px;
+width: 1920px;
+height: 1080px;
 }
 
 .dynam {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  z-index: -1;
+position: absolute;
+top: 0px;
+left: 0px;
+width: 100%;
+z-index: -1;
 }
 
 .dynam_a {
-  position: absolute;
-  z-index: -1;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  max-height: 100% !important;
-  max-width: 100% !important;
+position: absolute;
+z-index: -1;
+top: 0px;
+left: 0px;
+width: 100%;
+max-height: 100% !important;
+max-width: 100% !important;
 }
 
 .about {
-  width: 100%;
-  max-height: 100% !important;
-  max-width: 100% !important;
-  padding: 0 0 0 0;
-  margin: 0 0 0 0 !important;
+width: 100%;
+max-height: 100% !important;
+max-width: 100% !important;
+padding: 0 0 0 0;
+margin: 0 0 0 0 !important;
 }
 
 /* Clear floats after image containers */
 .row::after {
-  content: "";
-  clear: both;
-  display: table;
+content: "";
+clear: both;
+display: table;
 }
 
 .reveal section img { background:none; border:none; box-shadow:none; }
 
 .fa {
-  color: black;
-  /* font-family: FontAwesome; */
+color: black;
+/* font-family: FontAwesome; */
 }
 
 .fa:hover {
-  color: grey;
+color: grey;
 }
 
 g text{
-  transition: all .4s ease;
-  opacity:0;
-  /* visibility: hidden; */
+transition: all .4s ease;
+opacity:0;
+/* visibility: hidden; */
 }
 
 g circle{
-  transition: all .4s ease;
-  /* fill: rgb(43, 41, 41, .7); */
-  fill: rgba(255, 255, 255, 0.25);
-  stroke: white;
-  stroke-width: 3px;
+transition: all .4s ease;
+/* fill: rgb(43, 41, 41, .7); */
+fill: rgba(255, 255, 255, 0.25);
+stroke: white;
+stroke-width: 3px;
 }
 
 g .fullbright{
-  transition: all .4s ease;
-  /* fill: rgb(43, 41, 41, .7); */
-  fill: rgba(255, 255, 255, 0.8) !important;
-  stroke: white;
-  stroke-width: 3px;
+transition: all .4s ease;
+/* fill: rgb(43, 41, 41, .7); */
+fill: rgba(255, 255, 255, 0.8) !important;
+stroke: white;
+stroke-width: 3px;
 }
 
 g .fullbright:hover{
-  transition: all .4s ease;
-  /* fill: rgb(43, 41, 41, .7); */
-  fill: rgba(255, 255, 255, 1) !important;
-  stroke: white;
-  stroke-width: 3px;
+transition: all .4s ease;
+/* fill: rgb(43, 41, 41, .7); */
+fill: rgba(255, 255, 255, 1) !important;
+stroke: white;
+stroke-width: 3px;
 }
 
 g:hover text{
-  opacity:1;
-  /* visibility: visible; */
+opacity:1;
+/* visibility: visible; */
 }
 
 g:hover circle{
-  /* fill: rgb(43, 41, 41, 1); */
-  fill: rgb(255, 255, 255, 0.8);
+/* fill: rgb(43, 41, 41, 1); */
+fill: rgb(255, 255, 255, 0.8);
 }
 
 
 .pointer{
-  cursor: pointer;
-  font-size: 60px !important;
+cursor: pointer;
+font-size: 60px !important;
 }
 
 .pointer_text{
-  cursor: pointer;
-  font-size: 25px !important;
+cursor: pointer;
+font-size: 25px !important;
 }
 
 .help_button:hover ~ .help{
-  visibility: visible !important;
+visibility: visible !important;
+}
+
+.grey_arrow {
+  opacity: 0.2 !important;
+}
+
+.pointer_text, .pointer{
+  opacity: 0.65;
+  transition: all .4s ease;
+}
+
+.pointer:hover + .pointer_text, .pointer:hover, .pointer_text:hover{
+  opacity: 1;
+  transition: all .4s ease;
 }

@@ -416,7 +416,7 @@ function render_navigation(){
     
     u.setAttributeNS(null, 'x', '105');
     u.setAttributeNS(null, 'y', '585');
-
+  
     d.setAttributeNS(null, 'x', '105');
     d.setAttributeNS(null, 'y', '737');
     
@@ -442,14 +442,24 @@ function render_navigation(){
     ut.setAttributeNS(null, 'onclick', 'up()');
     dt.setAttributeNS(null, 'onclick', 'down()');
 
-    if (accessible[0]) s.appendChild(l);
-    if (accessible[0]) s.appendChild(lt);
-    if (accessible[1]) s.appendChild(r);
-    if (accessible[1]) s.appendChild(rt);
-    if (accessible[2]) s.appendChild(u);
-    if (accessible[2]) s.appendChild(ut);
-    if (accessible[3]) s.appendChild(d);
-    if (accessible[3]) s.appendChild(dt);
+    if (!accessible[0]) l.classList.add('grey_arrow');
+    if (!accessible[0]) lt.classList.add('grey_arrow');
+    if (!accessible[1]) r.classList.add('grey_arrow');
+    if (!accessible[1]) rt.classList.add('grey_arrow');
+    if (!accessible[2]) u.classList.add('grey_arrow');
+    if (!accessible[2]) ut.classList.add('grey_arrow');
+    if (!accessible[3]) d.classList.add('grey_arrow');
+    if (!accessible[3]) dt.classList.add('grey_arrow');
+
+    s.appendChild(l);
+    s.appendChild(lt);
+    s.appendChild(r);
+    s.appendChild(rt);
+    s.appendChild(u);
+    s.appendChild(ut);
+    s.appendChild(d);
+    s.appendChild(dt);
+
 
     slide.classList.add('processed'); 
 }
