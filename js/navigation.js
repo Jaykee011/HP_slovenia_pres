@@ -216,8 +216,9 @@ function render_navigation(){
     m.classList.add('help_button');
     mt.classList.add('help_button');
     
-    s.appendChild(m);
-    s.appendChild(mt);
+    // TODO: Button for map
+    // s.appendChild(m);
+    // s.appendChild(mt);
     
     // help
     var h = document.createElementNS("http://www.w3.org/2000/svg",'circle');
