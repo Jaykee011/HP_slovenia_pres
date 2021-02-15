@@ -199,20 +199,20 @@ function render_navigation(){
     var m = document.createElementNS("http://www.w3.org/2000/svg",'circle');
     var mt = document.createElementNS("http://www.w3.org/2000/svg",'text');
     mt.textContent = 'Map';
-
+    
     mt.setAttributeNS(null, 'fill', '#ffffff');
     mt.setAttributeNS(null, 'font-size', '15');
     mt.setAttributeNS(null, 'font-family', 'Garamont');
     mt.setAttributeNS(null, 'x', '146');
     mt.setAttributeNS(null, 'y', '905');
-
+    
     m.setAttributeNS(null, 'cx', '160');
     m.setAttributeNS(null, 'cy', '900');
     m.setAttributeNS(null, 'r', '25');
     m.setAttributeNS(null, 'stroke', 'white');
     m.setAttributeNS(null, 'stroke-width', '1');
     m.setAttributeNS(null, 'fill', '#2b2929');
-
+    
     m.classList.add('help_button');
     mt.classList.add('help_button');
     
@@ -354,8 +354,8 @@ function render_navigation(){
     
     lt.textContent = 'Older';
     rt.textContent = 'Newer';
-    ut.textContent = 'Older View';
-    dt.textContent = 'Newer View';
+    ut.textContent = 'Back';
+    dt.textContent = 'Next';
 
     // unicode characters for fontawesome
     // carets

@@ -1,4 +1,5 @@
 # TODO:
+	- image compression
 	- write a user/programmer manual
 	- separate logic into different files
 	- clean up directory tree
