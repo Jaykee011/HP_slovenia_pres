@@ -1,5 +1,6 @@
 # TODO:
 	- image compression
+	- mark scrollable images “Scroll down for more ↓”
 	- write a user/programmer manual
 	- separate logic into different files
 	- clean up directory tree

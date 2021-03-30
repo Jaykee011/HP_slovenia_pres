@@ -55,12 +55,12 @@ var nav_targets = {
     'LUCIE_1940_4'          :[null, null,   'LUCIE_1940_3', 'LUCIE_1940_1'],
 
     //MICHEL
-    'Michel_0'              :[null, null,   'Michel_1755_4.0',  'Michel_1711_1.0'],
-    'Michel_1711_1.0'       :[null, null,   'Michel_0', 'Michel_1755_1.1'],
+    'Michel_0'              :[null, null,   null,  'Michel_1711_1.0'],
+    'Michel_1711_1.0'       :[null, 'Michel_1755_1.1',   'Michel_0', null],
 
-    'Michel_1755_1.1'       :[null, 'Michel_1895_1.2',  'Michel_1711_1.0',  'Michel_1755_2.0'],
+    'Michel_1755_1.1'       :['Michel_1711_1.0', 'Michel_1895_1.2',  null,  'Michel_1755_2.0'],
     'Michel_1755_2.0'       :[null, 'Michel_1830_2.1',  'Michel_1755_1.1',  'Michel_1755_4.0'],
-    'Michel_1755_4.0'       :[null, 'Michel_1895_4.1',  'Michel_1755_2.0',  'Michel_0'],
+    'Michel_1755_4.0'       :[null, 'Michel_1895_4.1',  'Michel_1755_2.0',  'Michel_1755_1.1'],
 
     'Michel_1830_2.1'       :['Michel_1755_2.0',    'Michel_1895_2.2',  null,   null],
 
@@ -427,11 +427,11 @@ function render_navigation(){
     rt.setAttributeNS(null, 'x', '175');
     rt.setAttributeNS(null, 'y', '690');
     
-    ut.setAttributeNS(null, 'x', '75');
-    ut.setAttributeNS(null, 'y', '530');
+    ut.setAttributeNS(null, 'x', '108');
+    ut.setAttributeNS(null, 'y', '520');
 
-    dt.setAttributeNS(null, 'x', '75');
-    dt.setAttributeNS(null, 'y', '760');
+    dt.setAttributeNS(null, 'x', '108');
+    dt.setAttributeNS(null, 'y', '770');
 
     l.setAttributeNS(null, 'onclick', 'left()');
     r.setAttributeNS(null, 'onclick', 'right()');
